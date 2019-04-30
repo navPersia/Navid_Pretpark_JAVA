@@ -106,7 +106,6 @@ public class MaakServlet extends HttpServlet {
             String achternaam1 = request.getParameter("achternaam");
             
             Personeelslid personeelslid = new Personeelslid(voornaam1, achternaam1);
-            String persoon = personeelslid.toString();
             RequestDispatcher rd = request.getRequestDispatcher("welkomtoperson.jsp");
             request.setAttribute("persoon", personeelslid);
             rd.forward(request, response);

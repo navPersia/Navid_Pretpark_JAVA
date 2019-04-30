@@ -17,9 +17,16 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="css/nieuwebezoeker.css">
     </head>
-    <body id="welkom">
-            <p style="text-align: center; margin-top: 20%"><a class="startknoop" href="Nieuwe bezoeker.jsp">Nieuwe bezoeker</a></p>
+    <body>
+            <p style="text-align: center; margin-top: 10%"><a class="startknoop" href="Nieuwe bezoeker.jsp">Nieuwe bezoeker</a></p>
             <p style="text-align: center; margin-top: 5%"><a class="startknoop" href="Nieuwpretpark.jsp">Nieuw pretpark</a></p>
             <p style="text-align: center; margin-top: 5%"><a class="startknoop" href="nieuwpersoonlid.jsp">Nieuw persoonlid</a></p>
+            <form style="text-align: center; margin-top: 5%" action="OpvulServlet" method="get">
+                <button class="startknoop" type="submit" name="button" value="opvullen">
+                    <a><small>opvullen</small></a>
+                </button>
+            </form>
+            <p style="text-align: center; margin-top: 5%"><a class="startknoop" href="Sessionbezoeker.jsp">Bezoekers in session</a></p>
+            <p style="text-align: center; margin-top: 5%"><a class="startknoop" href="Sessionpretpark.jsp">Pretpark in session</a></p>
     </body>
 </html>

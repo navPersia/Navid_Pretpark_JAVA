@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="css/nieuwebezoeker.css">
 
     </head>
-    <body id="welkom">
+    <body>
         <div>
             <div class="container">
                 <h1 style="text-align: center" >Welkom <%=bezoeker.getVoornaam()%></h1>

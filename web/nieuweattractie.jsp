@@ -41,6 +41,7 @@
             <input class="schrijf" type="text" id="fotonaam" name="fotonaam" placeholder="De naam van het foto bestand">
         </p>
 
+
         <p style="width: 10%; margin: auto; margin-top: 2%">
             <button type="submit" class="knop" name="button" value="nieuweattractie">
                 <i class="fab fa-telegram-plane fa-3x"></i>
