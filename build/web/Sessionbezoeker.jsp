@@ -4,7 +4,7 @@
     Author     : Navid
 --%>
 <%@page import="java.util.*"%>
-<%@page import="fact.it.www.beans.Bezoeker"%>
+<%@page import="fact.it.www.beans.*"%>
 <%ArrayList<Bezoeker> bezoeker = (ArrayList<Bezoeker>) session.getAttribute("bezoekers");%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

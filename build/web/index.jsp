@@ -18,6 +18,10 @@
         <link rel="stylesheet" href="css/nieuwebezoeker.css">
     </head>
     <body>
+    <form action="MaakServlet" method="get">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit" name="button" value="search"><i class="fa fa-search"></i></button>
+    </form>
             <p style="text-align: center; margin-top: 10%"><a class="startknoop" href="Nieuwe bezoeker.jsp">Nieuwe bezoeker</a></p>
             <p style="text-align: center; margin-top: 5%"><a class="startknoop" href="Nieuwpretpark.jsp">Nieuw pretpark</a></p>
             <p style="text-align: center; margin-top: 5%"><a class="startknoop" href="nieuwpersoonlid.jsp">Nieuw persoonlid</a></p>

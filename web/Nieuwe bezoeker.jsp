@@ -3,7 +3,9 @@
     Created on : Mar 27, 2019, 12:19:09 PM
     Author     : navid
 --%>
-
+<%@page import="java.util.*"%>
+<%@page import="fact.it.www.beans.*"%>
+<%ArrayList <Pretpark> pretparken = (ArrayList <Pretpark>) session.getAttribute("pretparken");%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -38,16 +40,21 @@
                 --%>
                 <p class="custom-dropdown">
                 <select name="park">
+
                 <%String[] namen = {"None", "Walibi", "Plopsoland", "Bobbejaaland", "Comics station Antwerpen"};%>
+
                 <%for (String naam : namen) {%>
                     <option value="<%=naam%>"><%=naam%></option>
                 <%}%>
                 </select>
                 </p>
                 <p style="margin-left: 2%">
+                <%--
                 <%String[] names = {"Walibi", "Plopsoland", "Bobbejaaland", "Comics station Antwerpen"};%>
                 <%for (String name : names) {%>
-                    <input type="radio" name="pretparknaam" value="<%=name%>" id="pretparknaam" class="form-radio"><label for="pretparknaam"><%=name%></label>
+                --%>
+                    <%for (int j = 0; j < pretparken.size(); j++) {%>
+                    <input type="radio" name="pretparknaam" value="<%=j%>" id="pretparknaam" class="form-radio"><label for="pretparknaam"><%=pretparken.get(j).getNaam()%></label>
                 <%}%>
                 </p>
                 <p style="display: flex; margin: auto; width: 70%">

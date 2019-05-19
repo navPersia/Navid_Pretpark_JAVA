@@ -29,9 +29,16 @@
         <%if (pretparken == null){%>
         <p>klik eerst op 'opvullen'</p>
         <%}else{%>
-        <%for (Pretpark pretpark : pretparken) {%>
-        <p><%=pretpark.getNaam()%></p>
+
+        <%for (int j = 0; j < pretparken.size(); j++) {%>
+        <form action="MaakServlet" method="get">
+            <p hidden="True">
+                <input name="index" value="<%=j%>">
+            </p>
+            <button type="submit" name="button" value="sessionpark"><p><%=pretparken.get(j).getNaam()%></p></button>
+        </form>
         <%}}%>
+
 
         <p style="padding: 2%"><a style="text-align: center; width: 9%; margin: auto; margin-top: 2%" class="knop" id="back" href="index.jsp">Back</a></p>
     </div>

@@ -3,16 +3,28 @@
     Created on : Apr 2, 2019, 11:16:25 AM
     Author     : Navid
 --%>
+<%@page import="java.util.*"%>
+<%@page import="fact.it.www.beans.*"%>
+<%ArrayList<Bezoeker> bezoekers = (ArrayList<Bezoeker>) session.getAttribute("bezoekers");%>
+<%ArrayList <Pretpark> pretparken = (ArrayList <Pretpark>) session.getAttribute("pretparken");%>
+
+<%int index =0;%>
+<%String indexs = (String) request.getAttribute("indexs");%>
+<%if (indexs.equals("indexs")){
+    index = Integer.parseInt(request.getParameter("index"));} else {index = pretparken.size()-1;}%>
+
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%String park = (String) request.getAttribute("park");%>
-<%String name = (String) request.getAttribute("name");%>
+<%Pretpark pretpark = pretparken.get(index);%>
+<%ArrayList<Attractie> attracties = pretpark.getAttracties();%>
+<%Attractie attractie = attracties.get(attracties.size() - 1);%>
+<%String name1 = pretpark.getNaam();%>
 <%String name2 = (String) request.getAttribute("name2");%>
 <%String name3 = (String) request.getAttribute("name3");%>
 <%String name4 = (String) request.getAttribute("name4");%>
 <%String name5 = (String) request.getAttribute("name5");%>
-<%String img1 = (String) request.getAttribute("img1");%>
 <%String img2 = (String) request.getAttribute("img2");%>
 <%String img3 = (String) request.getAttribute("img3");%>
 <%String img4 = (String) request.getAttribute("img4");%>
@@ -37,9 +49,9 @@
             <div class="responsive">
                 <div class="gallery">
                     <a>
-                        <img class="myImg" id="myImg1" src="image/<%=img1%>" alt="<%=name%>" style="width:100%;max-width:300px" onerror="this.src='image/geenfoto.jpg';alt='no photo available'">
+                        <img class="myImg" id="myImg1" src="image/<%=attractie.getFoto()%>" alt="<%=name1%>" style="width:100%;max-width:300px" onerror="this.src='image/geenfoto.jpg';alt='no photo available'">
                     </a>
-                    <div class="desc"><%=name%></div>
+                    <div class="desc"><%=name1%></div>
                 </div>
             </div>
 
@@ -82,8 +94,11 @@
 
             <div class="clearfix"></div>
         </div>
-        <h3 style="padding: 2%">naam van pretpark:</h3>
-        <p style="padding: 1%"><%=park%></p>
+        <%if (attractie.getVerantwoordelijke() == null){%>
+        <p>Geen verantwordelijke is beschikbaar!</p>
+        <%}else{%>
+        <h3 style="padding: 2%">naam van Verantwordelijke is: <%=attractie.getVerantwoordelijke().getVoornaam()%> <%=attractie.getVerantwoordelijke().getFamilienaam()%></h3>
+        <%}%>
         <p style="padding: 2%; width: 9%; margin: auto; margin-top: 2%"><a style="text-align: center" class="knop" id="back" href="index.jsp">Home</a></p>
     </div>
 </div>

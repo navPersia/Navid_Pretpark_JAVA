@@ -3,11 +3,13 @@
     Created on : Apr 2, 2019, 10:09:42 AM
     Author     : Navid
 --%>
-
+<%@page import="java.util.*"%>
+<%@page import="fact.it.www.beans.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%String name = (String) request.getAttribute("name");%>
 <%String park = (String) request.getAttribute("park");%>
+<%ArrayList<Personeelslid> personeelsleden = (ArrayList <Personeelslid>) session.getAttribute("personeelsleden");%>
 <html>
 <html>
 <head>
@@ -23,9 +25,6 @@
 <!-- Form pagina -->
 <div class="container">
     <form action="MaakServlet" method="get">
-        <p hidden="True">
-            <input name="park" value="<%=park%>">
-        </p>
         <p>
             <label class="label-schrijf" for="name"><i class="fas fa-pencil-alt"></i>Naam van attractie<sup>*</sup></label>
             <input class="schrijf" type="text" id="name" name="name" placeholder="Naam van attractie" autofocus required>
@@ -40,7 +39,13 @@
             <label class="label-schrijf" for="fotonaam"><i class="fas fa-pencil-alt"></i>De naam van het foto bestand<sup>*</sup></label>
             <input class="schrijf" type="text" id="fotonaam" name="fotonaam" placeholder="De naam van het foto bestand">
         </p>
-
+        <p class="custom-dropdown">
+            <select name="verantwordelijk">
+                <%for (int j = 0; j < personeelsleden.size(); j++) {%>
+                <option value="<%=j%>"><%=personeelsleden.get(j)%></option>
+                <%}%>
+            </select>
+        </p>
 
         <p style="width: 10%; margin: auto; margin-top: 2%">
             <button type="submit" class="knop" name="button" value="nieuweattractie">
